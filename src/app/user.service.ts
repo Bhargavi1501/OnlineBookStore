@@ -15,4 +15,8 @@ export class UserService {
   loginUser(userCredObj):Observable<any>{
     return this.hc.post("/user/login",userCredObj);
   }
+
+  changePassword(userObj):Observable<any>{
+    return this.hc.post("/user/resetpassword",userObj);
+  }
 }

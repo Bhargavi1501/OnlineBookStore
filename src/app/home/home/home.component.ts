@@ -24,4 +24,14 @@ export class HomeComponent implements OnInit {
     )
   }
 
+  viewBook(){
+
+  }
+  addToCart(){
+
+  }
+  wishList(){
+    
+  }
+
 }

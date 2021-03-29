@@ -73,5 +73,23 @@ userApiObj.post("/login",asyncErrHandler(async(req,res,next)=>{
     }
 }))
 
+userApiObj.post("/resetpassword", asyncErrHandler(async(res,req,next)=>{
+    //get userCollection object
+    let userCollectionObject = req.app.get("userCollectionObject");
+
+    let userObj = req.body;
+
+    console.log("user obj is",userObj);
+    console.log("params",req.params);
+    let hash = await bcryptjs.hash(userObj.confirmpassword,6);
+    
+    //update user obj with new paswd
+    
+    let success = await userCollectionObject.updateOne({username:userObj.username},{$set:{
+        password:hash,
+    }})
+    console.log("pswd updated!")
+    res.send({message:"success"});
+}))
 //export
 module.exports = userApiObj;

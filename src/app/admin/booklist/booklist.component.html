@@ -42,7 +42,7 @@
     <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
         <div *ngFor="let i = index,let book of bookArray | paginate:{itemsPerPage:8,currentPage:p}">
             <div class="col">
-                <div class="card border-light mb-5 pr-3" style="height:fit-content">
+                <div class="card border-light mb-5 pr-3" style="border-radius: 5%; width: 100%;height: 320px;">
                     <img [src]=book.bookImgLink alt="" class="mt-2" style="display: flex;margin: auto;" height="150px"
                         width="150px" class="rounded-circle">
                     <div class="card-body">
@@ -56,6 +56,6 @@
                 </div>
             </div>
         </div>
-        <pagination-controls (pageChange) = "p=$event"></pagination-controls>
+        <pagination-controls (pageChange) = "p=$event" class="text-primary"></pagination-controls>
     </div>
 </div>

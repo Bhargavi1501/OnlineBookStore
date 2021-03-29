@@ -7,18 +7,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="home">Home</a>
+          <a class="nav-link active" aria-current="page" routerLink="home" style="display: block;"><i class="fa fa-home"></i> Home</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li> -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLinkActive="active">
-            Login
+            <i class="fas fa-sign-in-alt"></i> Login
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" routerLink="login">User</a></li>
-            <li><a class="dropdown-item" routerLink="admin">Admin</a></li>
+            <li><a class="dropdown-item" routerLink="login">User <i class="fa fa-user"></i></a></li>
+            <li><a class="dropdown-item" routerLink="admin">Admin <i class="fa fa-user-shield"></i></a></li>
             <!-- <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li> -->
           </ul>
@@ -27,7 +27,7 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li> -->
       </ul>
-      <form class="d-flex" style="width: 100%;">
+      <form class="d-flex" style="width: 50%;">
         <input class="form-control me-2" type="search" placeholder="Search for Books & authors.." aria-label="Search" >
         <button class="btn btn-success" type="submit">Search</button>
       </form>

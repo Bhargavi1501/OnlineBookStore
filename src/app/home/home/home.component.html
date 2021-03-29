@@ -1,83 +1,84 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3 bg-dark mt-5" style="opacity: 0.9;color:whitesmoke;">
             <!-- categories -->
-            <ul class="nav flex-column">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLinkActive="active">
-                      Categories
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" routerLink="login">User</a></li>
-                      <li><a class="dropdown-item" routerLink="admin">Admin</a></li>
-                      <!-- <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-                    </ul>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLinkActive="active">
-                      New Releases
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" routerLink="login">User</a></li>
-                      <li><a class="dropdown-item" routerLink="admin">Admin</a></li>
-                      <!-- <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-                    </ul>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLinkActive="active">
-                      Authors
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" routerLink="login">User</a></li>
-                      <li><a class="dropdown-item" routerLink="admin">Admin</a></li>
-                      <!-- <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-                    </ul>
-                  </li>
-                <!-- <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li> -->
-              </ul>
+            <div class="accordion mt-3" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Categories
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    New Releases
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Authors
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Most Popular
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
             <!-- Books -->
             <h1 class="text-primary">Books </h1>
-            <div class="container mt-5">
-                <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
-                    <div *ngFor="let i=index,let book of booksArray">
-                        <div class="col">
-                            <div class="card border-success mb-3" style="border-radius: 5%; width: 100%;height: 430px;">
-                                <img [src]=book.bookImgLink class="card-img-top mx-auto" style="width: 100%; height: 180px;padding: 5px;border-radius: 5%;">
-                                <div class="card-body">
-                                    
-                                    <p class="card-text" style="font-size: 13px;"><b>Author:</b>{{book.author}}</p>
-                                    <p class="card-text" style="font-size: 12px;"><b>Publisher:</b>{{book.publisher}}</p>
-                                    
-                                    <p class="card-text" ><b>{{book.price | currency:"INR"}}</b></p>
-                                    <div style="display: inline; float: left;padding: 5px;">
-                                        <!-- <button class="btn btn-success" (click)="onView(i)"><i class="fas fa-eye"></i>View</button> -->
-                                    </div>
-                                    <div style="display: inline; float: left;padding: 5px;">
-                                        <!-- <button class="btn btn-danger" (click)="onCart()"><i class="fas fa-cart-plus"></i>Cart</button> -->
-                                    </div>
-                                    
-                                    <div style="display: inline; float: left; padding: 5px;padding-left: 40px;">
-                                        <!-- <button class="btn btn-small" (click)="onWish()" style="background-color: blueviolet;color: white;"><i class="fas fa-boxes"></i>wishlist</button> -->
-                                    </div>
-                                    
-                                    
-                                </div>
-                                
-                                
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
+                <div *ngFor="let i = index,let book of bookArray | paginate:{itemsPerPage:8,currentPage:p}">
+                    <div class="col">
+                        <div class="card border-light mb-5 pr-3" style="border-radius: 5%; width: 100%;height: 400px;">
+                            <img [src]=book.bookImgLink alt="" class="mt-2" style="display: flex;margin: auto;" height="150px"
+                                width="150px" class="">
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                    <li class=""><strong>{{book.bookname}}</strong></li>
+                                    <!-- <li>Description : {{book.desc}}</li> -->
+                                    <li><strong>Author : {{book.author}}</strong></li>
+                                    <li><strong>Price : {{book.price | currency:"INR"}}</strong></li>
+                                </ul>
+                            </div>
+                            <div class="card-footer d-flex">
+                              <a class="text-warning" (click)="viewBook()"><i class="fa fa-eye"></i></a>&nbsp;&nbsp;
+                              <a class="text-success" (click)="addToCart()"><i class="fa fa-cart-plus"></i></a>&nbsp;&nbsp;
+                              <a class="text-danger" (click)="wishList()"><i class="fa fa-heart"></i></a>
                             </div>
                         </div>
-                        
                     </div>
-                    
                 </div>
-                
+                <pagination-controls (pageChange) = "p=$event" class="text-primary"></pagination-controls>
             </div>
         </div>
     </div>

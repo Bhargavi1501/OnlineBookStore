@@ -8,7 +8,7 @@ import { UserService } from 'src/app/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private us: UserService,private r: Router) { }
+  constructor(private us: UserService, private r: Router) { }
 
   ngOnInit(): void {
   }
@@ -16,32 +16,32 @@ export class LoginComponent implements OnInit {
 
     let userCredObj = formRef.value;
     console.log(userCredObj);
-  
-      this.us.loginUser(userCredObj).subscribe(
-        res => {
-          if (res["message"] == "success") {
-            //store tiken and username in browser's localstorage
-            localStorage.setItem("token", res["signedToken"]);
-            localStorage.setItem("username", res["username"]);
-            alert("Successfully Logged in!");
-            //navigate to userdashboard
-            this.r.navigateByUrl("/userdashboard");
-            
-          }
-          else {
-            alert(res["message"])
-          }
-        },
-        err => {
-          console.log("Something went wrong", err);
+
+    this.us.loginUser(userCredObj).subscribe(
+      res => {
+        if (res["message"] == "success") {
+          //store tiken and username in browser's localstorage
+          localStorage.setItem("token", res["signedToken"]);
+          localStorage.setItem("username", res["username"]);
+          alert("Successfully Logged in!");
+          //navigate to userdashboard
+          this.r.navigateByUrl("/home");
+
         }
-      )
+        else {
+          alert(res["message"])
+        }
+      },
+      err => {
+        console.log("Something went wrong", err);
       }
-  register(){
+    )
+  }
+  register() {
     this.r.navigateByUrl("/register");
   }
 
-  forgetPassword(){
-
+  forgetPassword() {
+    this.r.navigateByUrl("/resetpassword");
   }
 }
