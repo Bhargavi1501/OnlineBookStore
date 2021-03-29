@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <!-- <p class="display-5 mt-5 text-center text-primary">Welcome back,</p> -->
+            <div class="card mt-5" style="background-color:darkslategrey;color:whitesmoke;">
+                <div class="card-body">
+                    <!-- Login Form -->
+                    <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef)">
+
+                        <div class="form-group">
+                            <label for="inputAddress" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="inputAddress" autocomplete="off" name="username"
+                                ngModel>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="inputPassword4" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="inputPassword4" autocomplete="off"
+                                name="password" ngModel>
+                        </div>
+
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-primary mt-3">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

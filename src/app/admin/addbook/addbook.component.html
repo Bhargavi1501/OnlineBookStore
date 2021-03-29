@@ -1,0 +1,101 @@
+
+
+<p class="display-6 text-primary text-center mt-3">Add Book Details</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 ">
+            <form class="mt-3 bg-light p-3 form" #formRef="ngForm" (ngSubmit)="formRef.form.valid&&onSubmit(formRef)">
+
+                <!-- name -->
+                <div class="form-group">
+                    <label for="inputname" class="form-label">Book Title</label>
+                    <input type="text" class="form-control" id="inputname" name="bookname" ngModel required
+                        #bookname="ngModel">
+                    <!-- validation for name -->
+                    <span class="text-danger"
+                        *ngIf="(bookname.touched || formRef.submitted) && bookname.errors?.required">
+                        Book title is required
+                    </span>
+                </div>
+
+                <!-- Product no -->
+                <div class="form-group">
+                    <label for="inputname2" class="form-label">Book ID</label>
+                    <input type="text" class="form-control" id="inputname2" placeholder="This should be Unique"
+                        name="bid" ngModel required #bid="ngModel">
+                    <!-- Validation for product id -->
+                    <span class="text-danger" *ngIf="(bid.touched || formRef.submitted) && bid.errors?.required">
+                        Book ID is required
+                    </span>
+                </div>
+                <!-- product description -->
+                <div class="form-group">
+                    <label for="inputname1" class="form-label">Book Description</label>
+                    <input type="text" class="form-control" id="inputname1" name="desc" ngModel required
+                        #desc="ngModel">
+                </div>
+
+                <!-- size-->
+                <div class="form-group">
+                    <label for="inputSize" class="form-label">Category</label>
+                    <select id="inputSize" class="form-select" name="category" ngModel required #category="ngModel">
+                        <!-- <option selected>Choose...</option> -->
+                        <option value="fullstackdeveloper">Full Stack Developer</option>
+                        <option value="mongodb">MongoDB</option>
+                        <option value="nodejs">Nodejs</option>
+                        <option value="js">Javascript</option>
+                        <option value="html">HTML, CSS & RWD</option>
+                        <option value="react">React Js</option>
+                    </select>
+                    <!-- validation for size-->
+                    <span class="text-danger"
+                        *ngIf="(category.touched || formRef.submitted) && category.errors?.required">
+                        Category is required
+                    </span>
+                </div>
+
+                <!-- Product brand -->
+                <div class="form-group">
+                    <label for="inputname5" class="form-label">Author</label>
+                    <input type="text" class="form-control" id="inputname5" name="author" ngModel required
+                        #author="ngModel">
+                </div>
+
+                <!-- product price -->
+                <div class="form-group">
+                    <label for="inputname12" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="inputname12" name="price" ngModel required
+                        #price="ngModel">
+                </div>
+
+                <!-- product publisher-->
+                <div class="form-group">
+                    <label for="inputname13" class="form-label">Publisher</label>
+                    <input type="text" class="form-control" id="inputname13" name="publisher" ngModel required
+                        #publisher="ngModel">
+                </div>
+
+                <!-- product publisher-->
+                <div class="form-group">
+                    <label for="inputname14" class="form-label">Published Year</label>
+                    <input type="text" class="form-control" id="inputname14" name="publishedYear" ngModel required
+                        #publishedYear="ngModel">
+                </div>
+
+                <!--photo-->
+                <div class="form-group pt-4">
+                    <label for="inputname15" class="form-label">Upload Book Image</label>
+                    <input type="file" class="form-control" (change)="incomingfile($event)" name="photo"
+                        accept='image/*' placeholder="Upload file" ngModel>
+                </div>
+
+                <div class="col-12 pt-4 text-center">
+                    <button type="submit" class="btn btn-success">Add Book</button>&nbsp;
+                    <button class="btn btn-success" (click)="booklist()">View BookList</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

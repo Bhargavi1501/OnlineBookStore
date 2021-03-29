@@ -1,0 +1,84 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <!-- categories -->
+            <ul class="nav flex-column">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLinkActive="active">
+                      Categories
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" routerLink="login">User</a></li>
+                      <li><a class="dropdown-item" routerLink="admin">Admin</a></li>
+                      <!-- <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLinkActive="active">
+                      New Releases
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" routerLink="login">User</a></li>
+                      <li><a class="dropdown-item" routerLink="admin">Admin</a></li>
+                      <!-- <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLinkActive="active">
+                      Authors
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" routerLink="login">User</a></li>
+                      <li><a class="dropdown-item" routerLink="admin">Admin</a></li>
+                      <!-- <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                    </ul>
+                  </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li> -->
+              </ul>
+        </div>
+        <div class="col-md-8">
+            <!-- Books -->
+            <h1 class="text-primary">Books </h1>
+            <div class="container mt-5">
+                <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
+                    <div *ngFor="let i=index,let book of booksArray">
+                        <div class="col">
+                            <div class="card border-success mb-3" style="border-radius: 5%; width: 100%;height: 430px;">
+                                <img [src]=book.bookImgLink class="card-img-top mx-auto" style="width: 100%; height: 180px;padding: 5px;border-radius: 5%;">
+                                <div class="card-body">
+                                    
+                                    <p class="card-text" style="font-size: 13px;"><b>Author:</b>{{book.author}}</p>
+                                    <p class="card-text" style="font-size: 12px;"><b>Publisher:</b>{{book.publisher}}</p>
+                                    
+                                    <p class="card-text" ><b>{{book.price | currency:"INR"}}</b></p>
+                                    <div style="display: inline; float: left;padding: 5px;">
+                                        <!-- <button class="btn btn-success" (click)="onView(i)"><i class="fas fa-eye"></i>View</button> -->
+                                    </div>
+                                    <div style="display: inline; float: left;padding: 5px;">
+                                        <!-- <button class="btn btn-danger" (click)="onCart()"><i class="fas fa-cart-plus"></i>Cart</button> -->
+                                    </div>
+                                    
+                                    <div style="display: inline; float: left; padding: 5px;padding-left: 40px;">
+                                        <!-- <button class="btn btn-small" (click)="onWish()" style="background-color: blueviolet;color: white;"><i class="fas fa-boxes"></i>wishlist</button> -->
+                                    </div>
+                                    
+                                    
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

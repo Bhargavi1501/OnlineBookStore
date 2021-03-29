@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" (click)="addbook()">Add Book</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="booklist()">View Book List</a>
+                </li>
+                <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLinkActive="active">
+              Login
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="login">User</a></li>
+              <li><a class="dropdown-item" routerLink="admin">Admin</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li> -->
+                <!-- <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li> -->
+            </ul>
+            <ul class="d-flex">
+                <!-- <input class="form-control me-2" type="search" placeholder="Books & authors.." aria-label="Search"> -->
+                <a routerLink="" (click)="logout()" style="text-decoration: none;"><i class="fa fa-power-off"></i> Logout</a>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
+        <div *ngFor="let i = index,let book of bookArray | paginate:{itemsPerPage:8,currentPage:p}">
+            <div class="col">
+                <div class="card border-light mb-5 pr-3" style="height:fit-content">
+                    <img [src]=book.bookImgLink alt="" class="mt-2" style="display: flex;margin: auto;" height="150px"
+                        width="150px" class="rounded-circle">
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li class=""><strong>{{book.bookname}}</strong></li>
+                            <!-- <li>Description : {{book.desc}}</li> -->
+                            <li><strong>Author : {{book.author}}</strong></li>
+                            <li><strong>Price : {{book.price | currency:"INR"}}</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <pagination-controls (pageChange) = "p=$event"></pagination-controls>
+    </div>
+</div>
