@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home/home.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { ResetpasswordComponent } from './user/resetpassword/resetpassword.component';
+import { UserdashboardComponent } from './user/userdashboard/userdashboard.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
@@ -12,12 +13,13 @@ const routes: Routes = [
   { path: "categories", component: CategoriesComponent },
   { path: "home", component: HomeComponent },
   { path: "resetpassword", component: ResetpasswordComponent },
+  { path: "userdashboard", component: UserdashboardComponent },
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash:true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

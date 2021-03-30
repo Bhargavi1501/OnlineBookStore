@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("username", res["username"]);
           alert("Successfully Logged in!");
           //navigate to userdashboard
-          this.r.navigateByUrl("/home");
+          this.r.navigateByUrl("/userdashboard");
 
         }
         else {

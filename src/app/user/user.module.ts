@@ -6,11 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 
 
 
 @NgModule({
-  declarations: [RegisterComponent, LoginComponent, ResetpasswordComponent],
+  declarations: [RegisterComponent, LoginComponent, ResetpasswordComponent, UserdashboardComponent],
   imports: [
     CommonModule,
     FormsModule,
